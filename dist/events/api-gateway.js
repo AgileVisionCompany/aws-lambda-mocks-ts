@@ -1,4 +1,6 @@
-export var mockApiGatewayEvent = function (path, body, method, pathParameters, headers, queryStringParameters, resourcePath, stage, requestContext) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.mockApiGatewayEvent = function (path, body, method, pathParameters, headers, queryStringParameters, resourcePath, stage, requestContext) {
     return {
         path: path,
         body: !!body ? body : null,
@@ -41,7 +43,7 @@ var defaultApiGatewayEventRequestContext = function (path, resourcePath, method,
         resourceId: "resource_id",
     };
 };
-export var mockLambdaContext = function (done, fail) {
+exports.mockLambdaContext = function (done, fail) {
     var runTime = new Date().getTime();
     var timeout = 60 * 1000;
     return {
@@ -66,7 +68,7 @@ var defaultDone = function (error, result) {
 var defaultFail = function (err) {
     return;
 };
-export var mockCallback = function () {
+exports.mockCallback = function () {
     return function (error, result) {
         return;
     };
