@@ -9,6 +9,7 @@ List of currently available mocks:
     
  ## Events Mock API
  ### API Gateway (Events.ApiGateway)
+ ------
  #### mockApiGatewayEvent(
  #### path: string,
  #### body?: string | object,
@@ -43,4 +44,16 @@ AwsMock.Events.ApiGateway.mockApiGatewayEvent("http://example.com/example", { id
   ```
  
  ## Requsts Mock API
-  ToDO
+ ### AWS Service (Requests)
+ ------
+ #### mockAwsServiceRequest(response: CallbackResponse, callback: (err?: Error, data?: any) => void, service?: AWS.Service, operation?: string) : Callback
+
+ Mock requests to any AWS service. Useful when you need to tests your app with bad and ok responses from AWS.
+
+  ```typescript
+  AwsMock.Requests.mockAwsServiceRequest({
+    data: {
+      success: "true"
+    }
+  }, (err, data) => {});
+  ```
